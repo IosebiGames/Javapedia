@@ -1,40 +1,25 @@
-What is a main method in Java?
-Main method in Java (sometimes called PSVM) is a main entry point of Java programs, Main method is what executes Java programs and Applications
- -------------------------------------------------------------------------------------------------------
-How does Main method look like?
-public static void main(String[] args) {
-}
-Where should main method be declared? Inside of the class:
+Main method in Java (Sometimes called PSVM) is a main entry point of Java programs/App. if you want to execute or run your Java code, Main method is important. even if main method is understood well by experienced Java developers, it still confuses some begginers especially because they don't know what the meaning of the PSVM is. to declare a main method, you need to make sure that you have a class created first because main method should be declared inside of class:
 public class Main {
-    public static void main(String[] args) {
-    } 
+   public static void main(String[] args){
+    }
 }
--------------------------------------------------------------------------------------------------------
-Meaning of Main method's structure:
-public:
-  a access modifier, main method is public because it should be accessed outside of class where main method is declared.
-  it stays public to other classes.
-static:
-  because once main method is static, it becomes part of the method. JVM no longer needs to create instance of class where main method is located in order to access it.
-  JVM has a different regions, It won't efficient if JVM would have to constantly create instance of class where Main method is located to access it.
-void:
-   it simply specifies to the compiler that main method is a method which does not returns anything. 
-main:
-   a name for main method
-String[] args:
-   comes from your VM arguments in IDE or Development environment. usually it is empty by default but it does not stop programs from running. 
-   VM arguments are optional.
-  Meaning of PSVM: Public static void main
- -------------------------------------------------------------------------------------------------------
- Common needless ways to declare main method:
- 1. public static void main(String args) {}
- 2. public static void main(String args[]) {}
- 3. static public void main(String args[]) {}
- -------------------------------------------------------------------------------------------------------
-What to do inside of Main method? What happens after declaring it?
-After declaring main method, you can start writing your code inside of main method:
-public class Main { // opening of Main class
+How to understand it:
+public class Main { //opening of 'Main' class
    public static void main(String[] args) { // opening of main method
-      System.out.println("Hello");   
-   } // ending of main method
-} // ending of Main class
+         System.out.println("Hello");
+    } // ending of main method
+} // ending of 'Main' class
+1. public: Main method is a public because it needs to be used by JVM outside of the 'Main' class inside of different JVM (Java Virtual Machine) regions. main method can't be accesible if it is not public.
+2. static: Because when you create a static method, it becomes a part of method and you no longer need to create instances of class where method is declared. similarly, JVM won't need to create new and new instances of 'Main' class in order to use main method.
+3. void: Basically, it specifies to the the compiler that main method is a method which does not return anything.
+4. main: a name of the method.
+5. String[] args: those are the JVM arguments that come from your IDE or Development Environment. By default, VM arguments are optional and empty. However, it does not stops the Java code from execution.
+
+Of course there are possibly common and needless ways to declare main method like:
+public static void main(String args){}
+public static void main(String args[]) {}
+static public void main(String[] args){} (even if it is correct)
+But there are exceptions when Java code does not needs to be inside of class strictly to run. From the latest java versions, people can execute java code like this:
+void main() {
+   System.out.println("Hello");
+}
