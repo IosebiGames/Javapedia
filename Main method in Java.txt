@@ -1,0 +1,40 @@
+What is a main method in Java?
+Main method in Java (sometimes called PSVM) is a main entry point of Java programs, Main method is what executes Java programs and Applications
+ -------------------------------------------------------------------------------------------------------
+How does Main method look like?
+public static void main(String[] args) {
+}
+Where should main method be declared? Inside of the class:
+public class Main {
+    public static void main(String[] args) {
+    } 
+}
+-------------------------------------------------------------------------------------------------------
+Meaning of Main method's structure:
+public:
+  a access modifier, main method is public because it should be accessed outside of class where main method is declared.
+  it stays public to other classes.
+static:
+  because once main method is static, it becomes part of the method. JVM no longer needs to create instance of class where main method is located in order to access it.
+  JVM has a different regions, It won't efficient if JVM would have to constantly create instance of class where Main method is located to access it.
+void:
+   it simply specifies to the compiler that main method is a method which does not returns anything. 
+main:
+   a name for main method
+String[] args:
+   comes from your VM arguments in IDE or Development environment. usually it is empty by default but it does not stop programs from running. 
+   VM arguments are optional.
+  Meaning of PSVM: Public static void main
+ -------------------------------------------------------------------------------------------------------
+ Common needless ways to declare main method:
+ 1. public static void main(String args) {}
+ 2. public static void main(String args[]) {}
+ 3. static public void main(String args[]) {}
+ -------------------------------------------------------------------------------------------------------
+What to do inside of Main method? What happens after declaring it?
+After declaring main method, you can start writing your code inside of main method:
+public class Main { // opening of Main class
+   public static void main(String[] args) { // opening of main method
+      System.out.println("Hello");   
+   } // ending of main method
+} // ending of Main class
