@@ -1,17 +1,13 @@
 a class in Java is group of code. Everytime we want to write Java code, we need to create a new class with its own unique name and content.
 when we are writing high-level source by default (code that humans are able to read and understand), we are doing it in .java file that is manually created by us. However there is also another way to understand class. when we export our program, .jar file gets generated which contains those class files But this time they are no longer with .java file format, they are .class file now.
-
 .class file by itself is not a machine code, but it is a low-level bytecode (Humans are able to read it but not understand just like machines do) that needs to be interpreted by the JVM (Java Virtual Machine) in order to run java program or app over the platform. Meanwhile actual native machine code comes from the JIT (Just in Time) Compiler which improves the performance of the app and turns hot, frequently used code lines into native machine code. Whenever we download and setup JDK (Java Development Kit), it contains some documentations and JRE (Java Runtime Environment) which exactly provides JVM (Java Virtual Machine).
-
 to declare a class in Java, first you need to name it anything (lets say main) and end it with .java file extention. and then you need to open it and write:
 public class Main {
 }
 'public' means that 'Main' class is accesible to other classes. (outside of package as well)
 'class' is a keyword which specifies to the compiler that class is being declared
 'Main' is a class name.
-
 We have a different kind of classes like Top class (default), Inner class (class inside of class, helpful but not always neccessery), and selaed classes.
-
 to declare inner class, you need to have a top class first, and then you need to write inner class inside of top class:
 public class Main {
    class Main2 {
