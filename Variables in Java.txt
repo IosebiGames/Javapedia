@@ -1,7 +1,5 @@
-What are the Variables in Java?
 Variables in Java are like containers, They are placeholders that hold different types of data into the memory. 
 They are used in Java to store data and different kinds of values.
- -------------------------------------------------------------------------------------------------------
 What variables do we have in Java?
 - int: To store numbers (but not very long ones)
 - String: to store some texts
@@ -14,7 +12,6 @@ What variables do we have in Java?
 - float: looks similarly to double but when we store values, we must add 'f' at the end (like 2.76f)
 
 Those variables by Default are Primitive datatypes however String is always a Reference datatype.
-
  -------------------------------------------------------------------------------------------------------
 Example of declaring variables:
 public class Main {
@@ -60,7 +57,6 @@ What is the difference between local and global/member variables?
 The difference is that when you make a variable local, it is only accesible to the area where it is declared, when meanwhile global/member variable can be used everywhere in any fields/methods of the class.
 example:
 public class Main {
-	
 	public Main() {
 		create();
 	    use();
@@ -79,7 +75,6 @@ You can't use variable if it is declared somewhere locally, but lets try to make
 package main;
 
 public class Main {
-	
 	private int x;
 	
 	public Main() {
