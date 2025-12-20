@@ -1,0 +1,102 @@
+What are the Variables in Java?
+Variables in Java are like containers, They are placeholders that hold different types of data into the memory. 
+They are used in Java to store data and different kinds of values.
+ -------------------------------------------------------------------------------------------------------
+What variables do we have in Java?
+- int: To store numbers (but not very long ones)
+- String: to store some texts
+- boolean: can only be either true or false.
+- char: can store characters
+- long: to store very long numbers (But we should add Capital L at the end)
+- byte: to store some byte numbers (can't store numbers above 127)
+- short: to store very short numbers
+- double: to store double, precise values (like 2.75)
+- float: looks similarly to double but when we store values, we must add 'f' at the end (like 2.76f)
+
+Those variables by Default are Primitive datatypes however String is always a Reference datatype.
+
+ -------------------------------------------------------------------------------------------------------
+Example of declaring variables:
+public class Main {
+	public static void main(String[] args) {
+	     int x = 5;
+	     String name = "Bob";
+	     double d = 2.75;
+	     long longNumber = 123000000000000L;
+	     short shortNumber = 22;
+	     boolean ThisIsTruth = true;
+	     byte b = 127;
+	     float fVariable = 2.76f;
+	     char ch = 'A';
+	}
+}
+ -------------------------------------------------------------------------------------------------------
+But what are the Reference Datatype of variable? Why do we even have Primitive and Reference datatypes of variables?
+Imagine that you are declaring a variable, and you care about how it affects memory. So you are asking some question:
+ "Do I want to store actual value of variable in the memory or do I want to store the memory address of variable in the memory?"
+ -------------------------------------------------------------------------------------------------------
+What about Wrapper classes in Java:
+Wrapper classes are also Reference type of Variables that provide additional functions to wrap primitive types. 
+How to declare them:
+public class Main {
+	public static void main(String[] args) {
+	     Integer x = new Integer(5);
+	     String name = new String("Bob");
+	     Double d = new Double(2.75);
+	     Long longNumber = new Long(123000000000000L);
+	     Short shortNumber = new Short((short) 22);
+	     Boolean ThisIsTruth = new Boolean(true);
+	     Byte b = new Byte((byte) 127);
+	     Float fVariable = new Float(2.76f);
+	     Character ch = new Character('A');
+	}
+}
+ -------------------------------------------------------------------------------------------------------
+ Why are Constructors of Wrapper classes Depricated today?
+ Because while Wrapper classes by themselves are still totally functional, But their constructors are depricated because from the latest version of Java,
+ we now have a ways to pass/wrap values like: String.valueOf() or Ineteger.valueOf() and etc.
+ -------------------------------------------------------------------------------------------------------
+What is the difference between local and global/member variables?
+The difference is that when you make a variable local, it is only accesible to the area where it is declared, when meanwhile global/member variable can be used everywhere in any fields/methods of the class.
+example:
+public class Main {
+	
+	public Main() {
+		create();
+	    use();
+	}
+	public static void main(String[] args) {
+	     new Main(); 
+	}
+	public void create() {
+		int x = 5;
+	}
+	public void use() {
+		x = 1; // can't be used
+	}
+}
+You can't use variable if it is declared somewhere locally, but lets try to make it global/member variable:
+package main;
+
+public class Main {
+	
+	private int x;
+	
+	public Main() {
+		create();
+	    use();
+	}
+	public static void main(String[] args) {
+	     new Main(); 
+	}
+	public void create() {
+		x = 5;
+	}
+	public void use() {
+		x = 1; // can be used!
+	}
+}
+now x can be used in another method because its global and member variable and no longer local.
+ -------------------------------------------------------------------------------------------------------
+What is it called when Programmer organizes variables based on local/global principle?
+When a programmer chooses to declare global/member or local variable, it is called a Variable Scope.
