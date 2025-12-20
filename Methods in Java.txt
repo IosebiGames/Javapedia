@@ -1,0 +1,68 @@
+What are the Methods in Java:
+Methods in Java are the parametrized fields that can perform some action if it was called. it is very common and important to have a Methods
+in Java code. Methods can come with Object Oriented Programming (OOP) Principles such as method overriding/overloading. We usually declare methods inside of the
+class and then overload it with parameters and later pass arguments whenever we want to call it. Methods can be called from both inside of class and from another class.
+ -------------------------------------------------------------------------------------------------------
+How to declare a method:
+public class Main {
+	public static void main(String[] args) {
+         createMethod();
+	}
+	public static void createMethod() {
+		System.out.println("Hello");
+	}
+}
+Methods must be declared inside of the class but at the same time outside of other methods. You are able to call method inside of current or another method
+But you can't declare a method inside of method. if you want to call a method inside of static-method, you need to make it static with 'static' keyword to make it part of static methods.
+ -------------------------------------------------------------------------------------------------------
+However method can be non-static but still be called in a static method like this:
+public class Main {
+	public static void main(String[] args) {
+      new Main().createMethod();
+	}
+	public void createMethod() {
+		System.out.println("Hello");
+	}
+}
+At the same time as we said, method can be overloaded with parameters and require some arguments:
+public class Main {
+	public static void main(String[] args) {
+         createMethod("Hello");
+	}
+	public static void createMethod(String text) {
+		System.out.println(text);
+	}
+}
+-------------------------------------------------------------------------------------------------------
+Methods can be called from another classes:
+public class Main {
+	public static void main(String[] args) {
+        Main2 m2 = new Main2();
+	
+	      m2.createMethod("Hello");
+	}
+	public static class Main2 { 
+		public void createMethod(String text) {
+			System.out.println(text);
+		}
+	}
+}
+-------------------------------------------------------------------------------------------------------
+How to override methods from another class:
+Main class:
+public class Main extends Main2 {
+	public static void main(String[] args) {
+        createMethod("Hello");
+	}
+	public static void createMethod(String text) {
+		System.out.println(text);
+	}
+}
+Main2 class:
+public class Main2 { 
+	public static void createMethod(String text) {}
+}
+-------------------------------------------------------------------------------------------------------
+Why pass arguments:
+Think of method overiding as giving a empty picture to your friend, they will work on it but later when you ask it back, you must submit photo itself to apply it on picture.
+Its like giving to your method something that you will submit with something specific later.
