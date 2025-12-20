@@ -1,68 +1,42 @@
-What are the Methods in Java:
-Methods in Java are the parametrized fields that can perform some action if it was called. it is very common and important to have a Methods
-in Java code. Methods can come with Object Oriented Programming (OOP) Principles such as method overriding/overloading. We usually declare methods inside of the
-class and then overload it with parameters and later pass arguments whenever we want to call it. Methods can be called from both inside of class and from another class.
- -------------------------------------------------------------------------------------------------------
-How to declare a method:
+Methods in Java are parametrized fields that are able to perform some function if called, they are very important and common in Java and using them is often simple. However, methods have OOP (Object Oriented Programming) Principles such as method overloading and method overriding. But methods by itself can be created inside of class. However, you can't create a method inside of method even if you are able to call one method inside of another method or current method inside of itself. But default methods in Java do not return anything.
+simple example to create a method:
 public class Main {
-	public static void main(String[] args) {
-         createMethod();
-	}
-	public static void createMethod() {
-		System.out.println("Hello");
-	}
+  public static void main(String[] args){
+        createMethod();       
+   }
+   public static void createMethod() {
+      System.out.println("Hello");   
+   } 
 }
-Methods must be declared inside of the class but at the same time outside of other methods. You are able to call method inside of current or another method
-But you can't declare a method inside of method. if you want to call a method inside of static-method, you need to make it static with 'static' keyword to make it part of static methods.
- -------------------------------------------------------------------------------------------------------
-However method can be non-static but still be called in a static method like this:
+in this case, running java code will make it print 'Hello' in a console window. But its important to understand that you can't call non-static method inside of another static method/field. that is why you need to make a method static to call it inside of another static method. However, You can call non-static method inside of static method even without needing to make non-static method, static:
 public class Main {
-	public static void main(String[] args) {
-      new Main().createMethod();
-	}
-	public void createMethod() {
-		System.out.println("Hello");
-	}
+   public static void main(String[] args){
+          new Main().createMethod();
+   }
+   public void createMethod() { 
+      System.out.println("Hello");   
+   }
 }
-At the same time as we said, method can be overloaded with parameters and require some arguments:
+But also we are able to overload the method with parameters to pass arguments later:
 public class Main {
-	public static void main(String[] args) {
-         createMethod("Hello");
-	}
-	public static void createMethod(String text) {
-		System.out.println(text);
-	}
+   public static void main(String[] args){
+       new Main().createMethod("Hello");   
+    }
+    public void createMethod(String text) {
+      System.out.println(text);   
+   } 
 }
--------------------------------------------------------------------------------------------------------
-Methods can be called from another classes:
-public class Main {
-	public static void main(String[] args) {
-        Main2 m2 = new Main2();
-	
-	      m2.createMethod("Hello");
-	}
-	public static class Main2 { 
-		public void createMethod(String text) {
-			System.out.println(text);
-		}
-	}
-}
--------------------------------------------------------------------------------------------------------
-How to override methods from another class:
+But lets work on method overriding itself. to do it, we need to create another class and declare a method there and from the Main class, inherit that another class and then declare method similar to what was declared in another class:
 Main class:
 public class Main extends Main2 {
 	public static void main(String[] args) {
-        createMethod("Hello");
+		createMethod("Hello");
 	}
 	public static void createMethod(String text) {
 		System.out.println(text);
 	}
 }
 Main2 class:
-public class Main2 { 
-	public static void createMethod(String text) {}
+public class Main2 {
+	public static void createMethod(String text) {} 
 }
--------------------------------------------------------------------------------------------------------
-Why pass arguments:
-Think of method overiding as giving a empty picture to your friend, they will work on it but later when you ask it back, you must submit photo itself to apply it on picture.
-Its like giving to your method something that you will submit with something specific later.
