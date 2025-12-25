@@ -1,0 +1,23 @@
+Wrapper classes in Java basically are Reference datatypes and similar to primitive datatype variables but their function and way
+of how you declare it differs from classic primitive variables. Wrapper classes provide additional functions that can help to work
+with Primitive variables, such as by Wrapping them. of course Wrapper Classes's constructors itself got depricated starting
+from Java 9 but Wrapper classes by itself are still totally functional as they were. Why did this happen? Well because now 
+Reference datatype variables already have their own in-built helpful functions like:
+String.valueOf() or Integer.valueOf() or Boolean.valueOf()
+But generally using Wrapper classes is not hard, Here is how you declare them for usage:
+public class Main {
+    public static void main(String[] args) {
+          Integer n = new Integer(5);
+          String t = new String("Hello");
+          Boolean b = new Boolean(true);
+          Character ch = new Character('A');
+          Byte by = new Byte(8);
+          Long l = new Long(1000000000L);
+          Short sh = new Short(10);
+          Float f = new Float(2.76f);
+          Double d = new Double(2.75);
+   }
+}
+However some people may combine Wrapper classes with Autoboxing and Unboxing.
+
+analysed from source: https://www.baeldung.com/java-wrapper-classes
