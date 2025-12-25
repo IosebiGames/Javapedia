@@ -1,0 +1,39 @@
+Variables in Java are containers that help you to store different values. 
+Some people consider variables as placeholders but during programming, variables are very important because sometimes
+you need to store text, characters, numbers and more. And because of how everyone needs variables for a different goals,
+we have a two datatypes of variables, Primitive and Reference. to understand it easily, ask yourself:
+Primitive -> Do I want to store actual value of the variable in the memory?
+Reference -> Or..am I planning to refer to address where value of variable is stored?
+So basically, Primitive is for storing actual value of the variable in the memory when Reference datatype is used to not store
+but point where is varible's value located in the memory.
+Exmaple:
+int - is used to store numbers, but not extreamly long ones.
+String - used to store texts, but not characters. (String is already Reference datatype)
+byte - used to store bytes, but not above then number of 127.
+short - used to store short numbers.
+long - used to store extreamly long numbers, but at the end must end with Capital L.
+double - used to store double numbers (like 2.75)
+boolean - can either store value of 'true' or 'false'
+float - can store numbers similarly to double but at end must be ended with Lowercase f. (like 2.76f)
+char - can store only letters (characters), but not the actual words (like 'A')
+Simple way to declare variables:
+public class Main {
+         public static void main(String[] args) {
+	     int x = 5;
+	     String name = "Bob";
+	     double d = 2.75;
+	     long longNumber = 123000000000000L;
+	     short shortNumber = 22;
+	     boolean ThisIsTruth = true;
+	     byte b = 127;
+	     float fVariable = 2.76f;
+	     char ch = 'A';
+      }
+}
+However starting from the latest Java version (like Java 24), they have added 'var' keyword to reduce those 'strongly-typed'
+feelings for people who hate it. basicallly you can write:
+var myVar = "Hello";
+Even if I did not specify to the compiler that I am using String, it still 'understood' that I am using a String.
+And yes, variables can be either local or global/member.
+
+analysed from source: https://www.w3schools.com/java/java_variables.asp
