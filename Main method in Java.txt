@@ -6,5 +6,4 @@ public class Main {
    }
 }
 That is how you can typically and safely declare main method.
-
 Fixed and analyzed from source: https://www.geeksforgeeks.org/java/java-main-method-public-static-void-main-string-args/
