@@ -1,25 +1,14 @@
-Main method in Java (Sometimes called PSVM) is a main entry point of Java programs/App. if you want to execute or run your Java code, Main method is important. even if main method is understood well by experienced Java developers, it still confuses some begginers especially because they don't know what the meaning of the PSVM is. to declare a main method, you need to make sure that you have a class created first because main method should be declared inside of class:
-public class Main {
-   public static void main(String[] args){
-    }
-}
-How to understand it:
-public class Main { //opening of 'Main' class
-   public static void main(String[] args) { // opening of main method
-         System.out.println("Hello");
-    } // ending of main method
-} // ending of 'Main' class
-1. public: Main method is a public because it needs to be used by JVM outside of the 'Main' class inside of different JVM (Java Virtual Machine) regions. main method can't be accesible if it is not public.
-2. static: Because when you create a static method, it becomes a part of method and you no longer need to create instances of class where method is declared. similarly, JVM won't need to create new and new instances of 'Main' class in order to use main method.
-3. void: Basically, it specifies to the the compiler that main method is a method which does not return anything.
-4. main: a name of the method.
-5. String[] args: those are the JVM arguments that come from your IDE or Development Environment. By default, VM arguments are optional and empty. However, it does not stops the Java code from execution.
+Main method in Java (sometimes called PSVM) is the main entry point of Java programs or Applications, whenever you want to run your Java code, You have to declare a main method. typically it is:
+public static void main(String[] args) {
 
-Of course there are possibly common and needless ways to declare main method like:
-public static void main(String args){}
-public static void main(String args[]) {}
-static public void main(String[] args){} (even if it is correct)
-But there are exceptions when Java code does not needs to be inside of class strictly to run. From the latest java versions, people can execute java code like this:
-void main() {
-   System.out.println("Hello");
 }
+Main method has to be declared inside of class, when meanwhile code should go inside of main method next. 'public' is a access modifier. meaning, main method can be used outside of the Class which contains main method. 'static' is a keyword which specifies that main method becomes part of the other methods. in simple words, JVM won't have to create new and new instances of class where main method is present in order to use it. 'void' means that main method is a type of method that does returns anything, it just specifies that main method is a default method. 'main' is a name for main method, it is not a keyword or something similar to that. String[] args are comming from the Program arguments in your IDE or Development Environment, 'args' array is useful because you can pass Program arguments in it and then use it anywhere in your Java code. When you run your java code by help of PSVM, java launcher is executed that performs native system calls trough LoadLibrary to start Hotspot JVM. There are some ways of how people sometimes declare main method incorrectly, like they may forget to set 'args' to String array or they may try to declare PSVM at the wrong place.
+how to use main method in a simple way:
+public class Main {
+   public static void main(String[] args) {
+        System.out.println("Hello"); 
+   }
+}
+That is how you can typically and safely declare main method.
+
+Fixed and analyzed from source: https://www.geeksforgeeks.org/java/java-main-method-public-static-void-main-string-args/
