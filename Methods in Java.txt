@@ -1,42 +1,88 @@
-Methods in Java are parametrized fields that are able to perform some function if called, they are very important and common in Java and using them is often simple. However, methods have OOP (Object Oriented Programming) Principles such as method overloading and method overriding. But methods by itself can be created inside of class. However, you can't create a method inside of method even if you are able to call one method inside of another method or current method inside of itself. But default methods in Java do not return anything.
-simple example to create a method:
+methods in Java are parametrized fields that can be called to perform some actions, think of them as functions that
+you can use anytime when you need to perform some action, methods can come with OOP (Object Oriented Programming)
+Principles such as method overriding/Overloading. methods can have their own return type or they can be normal methods 
+that do not return anything. methods should be declared inside of class but they can't be declared inside of method, field,
+constructor itself, it should be declared seperately. methods can also be called from another classes. 
+let take a look at basic method:
 public class Main {
-  public static void main(String[] args){
-        createMethod();       
-   }
-   public static void createMethod() {
-      System.out.println("Hello");   
-   } 
-}
-in this case, running java code will make it print 'Hello' in a console window. But its important to understand that you can't call non-static method inside of another static method/field. that is why you need to make a method static to call it inside of another static method. However, You can call non-static method inside of static method even without needing to make non-static method, static:
+      public static void main(String[] args) {
+             perform();
+      }
+      public static void perform() {
+                System.out.println("Hello");
+       }
+ }
+as you can see, running the code will result console window printing 'Hello'. just like classes, methods have their own opening
+and closing body. methods can contain if statements, switches and more. but there is another way to call non-static method
+in a static context:
 public class Main {
-   public static void main(String[] args){
-          new Main().createMethod();
-   }
-   public void createMethod() { 
-      System.out.println("Hello");   
-   }
+     public static void main(String[] args) {
+             new Main().create();
+     }
+     public void create() {
+     }
 }
-But also we are able to overload the method with parameters to pass arguments later:
+like this, But methods can be overloaded as we said. when you do method overloading, You can use those paramaters
+from method but later you need to pass arguments when you call that method:
 public class Main {
-   public static void main(String[] args){
-       new Main().createMethod("Hello");   
-    }
-    public void createMethod(String text) {
-      System.out.println(text);   
-   } 
+     public static void main(String[] args) {
+           create("Bob", 25);        
+     }
+     public static void create(String name, int age) {
+            System.out.println(name);
+            System.out.println("" + age);
+    }  
 }
-But lets work on method overriding itself. to do it, we need to create another class and declare a method there and from the Main class, inherit that another class and then declare method similar to what was declared in another class:
-Main class:
-public class Main extends Main2 {
-	public static void main(String[] args) {
-		createMethod("Hello");
-	}
-	public static void createMethod(String text) {
-		System.out.println(text);
-	}
+it will work but you can do it  even in non-static context:
+public class Main {
+       public static void main(String[] args) {
+              new Main().create("Bob", 25); 
+   }
+   public void create(String name, int age) {
+          System.out.println(name);
+          System.out.println("" + age);      
+   }  
 }
-Main2 class:
-public class Main2 {
-	public static void createMethod(String text) {} 
+it will work, But as we said methods can be overrided or called from another class. to call it from another class, you need to
+create another class with method first, then instantiate it and call method from instance of that new class:
+public class newClass {
+     public void create() {
+      }
+} 
+public class Main {
+    public static void main(String[] args) {
+          newClass nc = new newClass();
+
+         nc.create(); 
+   }
 }
+or lets do a method overriding:
+public class newClass {
+          public void create() {}
+}
+public class Main extends newClass {
+      public static void main(String[] args) {
+
+     }
+     public void create() {
+		
+     }
+}
+that is how you override, overload methods and use them in Java but sometimes you can use it for encapsulation too:
+public class newClass {
+      private String name;
+      private int age;
+      private double weight;
+	
+         private String getName() {
+             return name = "Bob";
+         }
+         private int getAge() {
+              return age = 25;
+         } 
+         private double getWeight() {
+               return weight = 60.0;
+      }
+}
+
+analysed from source: https://www.tutorialspoint.com/java/java_methods.htm
