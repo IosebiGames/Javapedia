@@ -9,7 +9,7 @@ public class Main {
              perform();
       }
       public static void perform() {
-                System.out.println("Hello");
+          System.out.println("Hello");
        }
  }
 as you can see, running the code will result console window printing 'Hello'. just like classes, methods have their own opening
@@ -17,7 +17,7 @@ and closing body. methods can contain if statements, switches and more. but ther
 in a static context:
 public class Main {
      public static void main(String[] args) {
-             new Main().create();
+          new Main().create();
      }
      public void create() {
      }
@@ -36,7 +36,7 @@ public class Main {
 it will work but you can do it  even in non-static context:
 public class Main {
        public static void main(String[] args) {
-              new Main().create("Bob", 25); 
+           new Main().create("Bob", 25); 
    }
    public void create(String name, int age) {
           System.out.println(name);
@@ -81,8 +81,7 @@ public class newClass {
               return age = 25;
          } 
          private double getWeight() {
-               return weight = 60.0;
+              return weight = 60.0;
       }
 }
-
 analysed from source: https://www.tutorialspoint.com/java/java_methods.htm
