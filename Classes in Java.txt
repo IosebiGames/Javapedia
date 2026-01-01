@@ -21,5 +21,4 @@ Simple way to declare class:
 public class Main {
       // methods, constructors go here, PSVM (main method) as well. variables that can be declared as member/global variables.
 }
-
 analyzed from source: https://en.wikipedia.org/wiki/Java_class_file
