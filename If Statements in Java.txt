@@ -10,31 +10,32 @@ public class Main {
                create();
        }
        public static void create() {
-	 int x = 5;
+	      int x = 5;
 		
-	if(x < 10) {
-	     System.out.println("x is less then 10");
-	}else {
-	     System.out.println("x is not less then 10");
-                    }
-             }
+	      if(x < 10) {
+	        System.out.println("x is less then 10");
+	      }else {
+	         System.out.println("x is not less then 10");
+          }
+      }
 }
 But as I said, sometimes if stamements can work without needing to use bodies:
 public class Main { 
          public static void main(String[] args) {
-                        create();
+               create();
          }
          public static void create() {
-	  int x = 5;
+	         int x = 5;
 		
-	if(x < 10) System.out.println("x is less then 10");
-	else {
+	     if(x < 10) System.out.println("x is less then 10");
+    	 else {
 	       System.out.println("x is not less then 10");
 	    }
-           }
+     }
 }
 And just like that, if statements can be used in all kinds of ways as long as syntaxually and logically it's correct. But otherwise if
 it has some syntax/logical errors, errors can happen or uneven result output is expected. You can declare if-statements in
 constructors, methods, and even in main method. but static-context/non-static context use in if statements apply too.
+
 
 Analysed from source: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html
