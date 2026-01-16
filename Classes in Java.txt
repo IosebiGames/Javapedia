@@ -1,24 +1,18 @@
-in normal sense, class in Java is a collection of the code. However, How you can understand 'class' depends on
-what kind of class we are talking about. We have a two kinds of classes, the one that is used under normal Java development
-to write a code with methods, variables, loops, constructors, Objects and second one is low level class format.
-Basically, high-level source code that we write uses .java file extension when class that holds low level Bytecode uses
-extension of .class file. The difference between low-level code and high-level source code is that low-level code is understood
-by the machine when high-level source is readable, understandable for the humans. Of course humans can read low-level code
-but they mostly won't understand anything bayond numbers or cryptic symbols. when we compile our code, the Java compiler
-generates .class file from high-level source code (.java file):
-.java file -> compiler -> .class file.
-Low-level .class file that represents Java bytecode is located inside of the jar file, However Its important to understand that we don't Decompile
-during Development, it is different and seperate process. that bytecode is what makes java programs/apps platform-independent because
-normally they get used by JVM to run the program/app. Normally bytecode is working but it is kind of slow, so JVM provides
-JIT (Just in Time) Compiler which turns hot, frequently used code lines from bytecode into native machine code and improves performance of the code. that can run faster but mostly
-heavy work is done by Hotspot, the JVM's implementation that works on generating native machine code as well but also on different
-known features such as profiling, dead code enlimiation, speculative optimization, Tiered compilation, Escape Analysis,
-They mostly come from Hotspot. of course both JIT and Hotspot are efficient and both of them do profiling but
-in a slightly different ways. JIT does profiling (performance tracking) locally to work on hot, frequently executed code lines and code's performance
-when Hotspot does much more profiling with precision. on December 11 of 2006, class file format was modified under
-JSR (Java Specification Request) 202.
-Simple way to declare class:
+Classes in Java are group of code. whenever you want to write a java code, you must use or create any class where code
+should go. Those classes can be used inside of other classes if you create instance of it. you can call methods or access
+other variables/Objects from the instance of class that you have created. usually classes come with .java file extension at the 
+end, for example: Main.java, myClass.java and so on.
+
+Typical structure of class:
 public class Main {
-      // methods, constructors go here, PSVM (main method) as well. variables that can be declared as member/global variables.
+   // code goes here
 }
+if class is created inside of package, then it needs package declaration above:
+package myPackage;
+public class Main {
+        // code goes here
+}
+file format of class did not change much because it mostly stays the same, However on December 11 of 2006, class file format
+was modified little bit under JSP 202 (Java Specification Request).
+
 analyzed from source: https://en.wikipedia.org/wiki/Java_class_file
