@@ -43,4 +43,5 @@ do {
 it makes sense from multiple glances, because its about doing something while condition is happening. like if x equals to five 
 then something can be performed.
 
-https://www.scholarhat.com/tutorial/java/java-loops-for-while-do-while
+
+analysed from source: https://www.scholarhat.com/tutorial/java/java-loops-for-while-do-while
