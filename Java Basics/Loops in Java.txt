@@ -1,0 +1,47 @@
+Loops in Java are the blocks set by you to repeat something over and over. imagine that you want to perform short
+operation by repeating something, that is why we have a different types of loops because they serve different purposes
+for you. Lets list all known loops:
+- while loop (some can be do while loops)
+- for loop (some can be for each loops, but it can be also used for decrementing and incrementing)
+- nested loops (basically loops inside of loops)
+- infinite loops (loops that repeat themselves endlessly until you stop them)
+Loops save time, avoid excessive code lines and keep your code readable. 
+
+1. for loop (increment and decrement):
+for(int i = 0; i < 5; i++) {
+}
+for example this snippet, here we insert 'i' first and set it to zero, then we choose condition and then we increment 'i'.
+Basically we are saying: "int i equals to zero, if i is less then 5, then increment i).
+2. for each loop (commonly looping trough the arrays):
+for(int i : numbers) {
+}
+what we did here is that we kind of asked 'i' to run over 'numbers' array and collect along with it. 
+Think of saying: "I will loop them at once but get all the values"
+3. Nested loops (those can be any kinds of loops inside of loops):
+for(int i = 0; i < 5; i++) {
+     for(int i2 = 0; i2 < i; i++) {
+    }
+}
+Little difference with nested loops is that you can access incremented variable from first loop to second and you can perform
+multiple looping at the same time, there can be as much nesting as you wish.
+4. infinite loops(much simpler):
+because those are loops that will never stop unless you manually stop them:
+for(;;) {
+   //anything goes here.
+}
+or:
+while(true) {
+  //anything goes here
+}
+both of them are simpler then increment/decrement for loops and for each loops or do while loops but not 
+super commonly used. 
+5. Do-while loop:
+do {
+// code goes here
+}while(x == 5){
+}
+it makes sense from multiple glances, because its about doing something while condition is happening. like if x equals to five 
+then something can be performed.
+
+
+analysed from source: https://www.scholarhat.com/tutorial/java/java-loops-for-while-do-while

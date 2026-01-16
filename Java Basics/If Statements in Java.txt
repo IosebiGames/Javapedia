@@ -1,0 +1,41 @@
+if-statements in Java is a block of code, it's a stamement to control action flow. Think about planning something, if something
+happens then some kind of event will happen. if-stamements can have a 'else' at the end to check if something goes otherwise.
+or, if-stamements can be present in methods. and if-statements can be declared inside of if-statements (if done correctly).
+if-statements can be used for all kinds of Java programs: Games, Console-based apps/Games, or Desktop apps.
+Especially it can be used when you want to check values of variables. Preferences sometimes matter too, different developers
+use if-statements in many kinds of ways, including syntaxually. they can declare if staments without bodies or curly-braces.
+here is the basic example of if-statements:
+public class Main {
+       public static void main(String[] args) {
+               create();
+       }
+       public static void create() {
+	      int x = 5;
+		
+	      if(x < 10) {
+	        System.out.println("x is less then 10");
+	      }else {
+	         System.out.println("x is not less then 10");
+          }
+      }
+}
+But as I said, sometimes if stamements can work without needing to use bodies:
+public class Main { 
+         public static void main(String[] args) {
+               create();
+         }
+         public static void create() {
+	         int x = 5;
+		
+	     if(x < 10) System.out.println("x is less then 10");
+    	 else {
+	       System.out.println("x is not less then 10");
+	    }
+     }
+}
+And just like that, if statements can be used in all kinds of ways as long as syntaxually and logically it's correct. But otherwise if
+it has some syntax/logical errors, errors can happen or uneven result output is expected. You can declare if-statements in
+constructors, methods, and even in main method. but static-context/non-static context use in if statements apply too.
+
+
+Analysed from source: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html

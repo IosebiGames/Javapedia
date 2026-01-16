@@ -1,0 +1,55 @@
+Inner Classes in Java (also known as Nested Classes) are kind of classes that can be created inside of class. Think about
+Having multiple classes not inside of your project structure or inside of other packages but inside of one class. Unlike
+top-level class which by default can't be private, Inner class can be optionally. What makes Inner classes efficient is that you
+don't have to manually create new and new classes because you can have multiple classes inside of one class. Of course
+there are static Inner classes as well but they are less used but it is still useful. We can access Inner classes int two forms
+Locally and anonymously. Here is the basic example of Inner class:
+public class Main {
+      public static void main(String[] args) {
+        Main2 m2 = new Main2();
+
+        m2.x = 5;
+        System.out.println(m2.x);
+      }
+      private static class Main2 {
+	     public int x;
+     }
+}
+What can confuse some people is that this Main2 class is private but we still did manage to create new Instance of this class.
+But its important to not forget that Main2 class is private because it can be accessed in a class where its declared but it can't be
+accessed in other classes. Or here is how you access Inner classes anonymously:
+public class Main {
+        private Main(Main2 m2) {
+	    System.out.println(m2.init());
+        }
+         public static void main(String[] args) {
+              new Main(new Main2()); //anonimous
+          }
+          private static class Main2 {
+        	  public int x;
+		
+	         public int init() {
+	            return x = 5;
+               }
+         }
+}
+This is going to work but obviously there are some people who may think of serializing those Inner classes but problem is that
+depending on Java compiler version, you may have trouble with serializing differrent Inner classes. but it is also important to
+know that not all inner classes have to be static:
+public class Main {
+       private Main() {
+	        Main2 m2 = new Main2();
+	        System.out.println(m2.init());
+       }
+       public static void main(String[] args) {
+                new Main();
+       }
+       private class Main2 {
+	       public int x;
+	
+           public int init() {
+                 return x = 5;
+             }
+       }
+}
+analysed from source: https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html

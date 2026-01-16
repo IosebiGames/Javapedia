@@ -1,0 +1,69 @@
+as we said, in Java we are able to create variables and use them as containers to store a value, also we are able to create classes
+and then instantiate them. But...Where do those variables and instances 'go' ? where are they stored? That is exactly what
+we will break down because understanding how it works simply will make Java development slightly easier.
+When we declare variable or instantiate classes, we either do it on top or do it locally inside of any method (or sometimes in
+main method), we can understand how it works. But first we should know what Data runtime Areas from JVM Regions are 
+responsible for this:
+- Stack: stores local primitive variables and references
+- Heap: stores instances and Objects (contains Garbage Collectors)
+- Method area: stores method declarations and variables/instances that belong to methods (in modern JVM, its called Metaspace)
+- Constant Pools: (Like String contant Pool and more, they store arguments of new instances)
+- Compiler: even taugh compiler does not store anything here but it still plays a role to find syntax errors in declarations.
+Stack stores variables, Class instance names when they are declared locally anywhere inside of non-static method, Heap stores
+instances that are initialized with 'new' keyword. method area stores method declarations and variables/Class instances that
+belong to methods. Lets at this example:
+public class Main {
+     public static void main(String[] args) {
+               int x =5; 
+    }
+}
+here 'int' is type-info for conpiler, it does not go anywhere but it specifies to compiler that 'x' variable is int primitive type. 
+'x' is a name of this int variable which is declared in a main method locally, so it goes on Stack with value of 5 as well.
+But what about a case when variable is member/global type? lets take a look:
+public class Main {
+    public int x = 5;
+    public static void main(String[] args) {
+     }
+}
+int this case again, both 'public' and 'int' is specifier for compiler, but 'x' is a variable name that will go on Heap this time
+because this 'x' variable is part of the class now, it is not declared locally inside of any method or field, its global/member variable.
+value of 5 goes in a Heap as well. But there are different cases when variable can be static or part of the method right?
+Lets look at what happens when variable is static:
+public class Main {
+      public static int x = 5;
+      public static void main(String[] args) {
+         
+    }
+}
+Now instead of heap, variable name 'x' and value 5 goes in a method area instead of Heap, while 'int' or 'public' or 'static' still
+remains as type-info for compiler. But lets see a case when method is declared and goes in a Method area and how can Stack
+play a role here:
+public class Main {
+    public static void main(String[] args) {
+            create(); 
+    }
+    public static void create() {
+    }
+}
+that 'create' method declaration goes in a method area when create() call frame goes on Stack, But what about a case
+with Constant Pools and Heap? Example:
+public class Main {
+      public Main(String name) {
+      }    
+      public static void main(String[] args) {
+             new Main("Bob");         
+    }
+} 
+in this case 'new Main' instance goes on Heap but "Bob" String goes in String constant pool. But there can still be one case
+where its confusing for some people:
+public class Main {
+       public static int x;
+       public static void main(String[] args) {
+                x =5;
+    }
+} 
+Yes 'x' is used locally but it is static so it is part of the method, it still goes on method area even if it is used locally.
+Its also interesting to remember that we recognise two Garbage collector types today, Young generation and old generation
+but bellow Java 8, there was a parmanent generation that got replaced by Method area.
+
+analysed from source: https://medium.com/@AlexanderObregon/introduction-to-javas-memory-model-heap-stack-and-metaspace-ceaeb565921c
