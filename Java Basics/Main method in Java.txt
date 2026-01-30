@@ -1,0 +1,8 @@
+Main method in Java (also sometimes spelled as PSVM) is a main entry point of your Java code/program/application.
+you need to have Main method defined in your Java class in order to run your Java code. It has its own keywords that
+are important to not forget. Main method looks like this:
+public class Main { //opening Main class
+     public static void main(String[] args) { //opening main method
+             // code goes here
+     }//closing main method
+}// closing Main class

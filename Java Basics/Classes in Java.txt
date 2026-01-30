@@ -1,18 +1,6 @@
-Classes in Java are group of code. whenever you want to write a java code, you must use or create any class where code
-should go. Those classes can be used inside of other classes if you create instance of it. you can call methods or access
-other variables/Objects from the instance of class that you have created. usually classes come with .java file extension at the 
-end, for example: Main.java, myClass.java and so on.
-
-Typical structure of class:
-public class Main {
-   // code goes here
-}
-if class is created inside of package, then it needs package declaration above:
-package myPackage;
-public class Main {
-        // code goes here
-}
-file format of class did not change much because it mostly stays the same, However on December 11 of 2006, class file format
-was modified little bit under JSP 202 (Java Specification Request).
-
-analyzed from source: https://en.wikipedia.org/wiki/Java_class_file
+Usually whenever we want to write a Java code, we need to create a new class or use already existing one.
+classes are group of code that you write, usually they end with .java files. (ex: Main.java, Game.java, myClass.java)
+classes have their declaration syntax too:
+public class Main { //opening
+      //rest of the code goes here 
+}//closing

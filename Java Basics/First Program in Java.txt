@@ -1,0 +1,9 @@
+to make a most basic program in Java to test how it works and how does it run, you can print out 'Hello' in the
+console window. we have learned a main method where code goes and we have already learned syntax of the class.
+Many kinds of things can be done in main method but we can do now is that we can do something as specific and printing
+out a message:
+public class Main {
+   public static void main(String[] args) {
+           System.out.println("Hello");
+    }
+}
