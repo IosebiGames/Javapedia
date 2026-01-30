@@ -1,0 +1,39 @@
+Loops in Java are blocks of code that help you to repeat code over and over. they help to make your code more efficient and
+clean. They are very commonly used and helpful. there are many types of loops depending on what are you trying to do.
+in Java we have:
+- while loop (repeat something over and over always if condition allows it)
+- do-while loop (repeat something once but only continue to repeat if condition allows it. If condition doesn't then it stops)
+- for loop (used to increment/decrement values)
+- for-each loop (used to loop trough the arrays or components at once to get all contents of it. its pretty short)
+- Nested loops (loops inside of loops. for example while loop inside of while loop or for loop inside of for loop.)
+- Infinite loops (it always continues to repeat over and over unlness you stop it manually by yourself.)
+Examples:
+1. while Loop :
+    while(x == 5) {
+       // do something
+}
+2. do-while loop:
+    do {
+        //code goes here.
+    }while(x == 5);
+3. for loop:
+    for(int i = 0; i < 5; i++) {
+       //code goes here. 'i' gets incremented from 0 to 5    
+}
+4. for-each loop:
+    for(String name : names) {
+         //code 
+   } 
+5. Nested loops:
+    for(int i =0; i < 5; i++) {
+       for(int i2 = 0; i2 < 4; i2++){
+            //code
+     }
+   }
+6. Infinite loops:
+   while(true) {
+      //repeat something infinitely but use 'return' keyword to stop the loop manually from inside.
+}
+   for(;;) {
+      // pretty similar to infinite while loop, code goes here.
+  }
