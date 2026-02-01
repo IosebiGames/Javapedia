@@ -1,0 +1,32 @@
+in Java we have If-statements to check condition and then do something once, unlike do-while loop or infinite loops where
+condition is being checked and code is repeated, If-statements are block of code that check something only once.
+They can check conditions, if variables equal to something, and if conditions align, something specific can happen.
+
+by default, if statements work like this:
+
+public class Main {
+   public static void main(String[] args) {
+          int x = 5;
+          int y = 2;
+          int z = x + y;
+
+          if(z > 0){
+               System.out.println(z);
+          }
+   }
+}
+Here we check if 'z' is more than zero, and if yes then we print out value of 'z'
+If statements can work for boolean values, and many many things that have any value. 
+You can even check if object is not null:
+
+public class Main {
+     public static void main(String[] args) {
+             myClass mc = new MyClass(); 
+             
+             if(mc != null) {
+                  //code goes here.
+            }
+     }
+}
+If statements can be used everywhere assuming you are doing it inside of field, method, constructor but makes sure it 
+is not being used in loops or repetetive blocks but even if it is, keep it under control. 
