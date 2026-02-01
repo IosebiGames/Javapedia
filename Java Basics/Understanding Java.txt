@@ -1,0 +1,10 @@
+Before writing a Java code, we have to download JDK (Java Development Kit) from Oracle, the JDK contains JRE.
+JRE stands for Java Runtime Environment which provides Java Virtual Machine (JVM) exactly that Virtual machine which
+helps to make Java programs/codes platform-independent and runnable by interpreting bytecode.
+
+After downloading JDK, we setup Java Home by copying JDK path from our program files and pasting it in System variables
+in 'Edit System environment variables'. they are very important for command-prompt Java operations. It can partially interfere
+with Java development too.
+
+and the IDE (Integreted Development Environment) is a Tool which lets us debug, read, run and modify our code safely.
+many IDEs let you pick JRE version of the Project.
