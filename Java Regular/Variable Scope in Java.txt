@@ -1,0 +1,52 @@
+Usually when we create variables in Java, we can either make it local variable or Global (Member) variable,
+it matters because it can help you to access one variable everywhere in your code. not just locally or at specific lines of code:
+
+lets say you created Two variables:
+- x (int): 124
+- y (int): 73
+
+Can 'x' use 'y'? No.
+Can 'y' use 'x'? Yes.
+
+That's because 'y' is created after 'x' and 'x' is created before 'y'.
+So what do we do to make 'y' usable for 'x' and 'x' usable for 'y' ?
+That's where Variable scope kicks in:
+
+public class Main {
+   public int x = 124;
+   public int y = 73;  
+
+    public void init() {
+         x = y;
+        System.out.println(x); 
+   }
+   public void doSomething() {
+         if(x == 73) {
+            //operation
+       } 
+   }
+}
+so now you use something beyond at just local lines.
+This applies not only to variables but also to Objects and instances:
+
+public class Main {
+    public MyObject mo = new MyObject();
+
+    public void myMethod() {
+          mo.x = 2; // can be used everywhere
+    }
+    public void myMethod2() {//even in this method
+         mo.y = 3;
+   }
+}
+What can't be done:
+public class Main {
+    public void myMethod() {
+          MyObject mo = new MyObject();
+          mo.x = 2; // 'mo' can be used only here.
+    }
+    public void myMethod2() can't be used in this method
+         mo.y = 3; // can't be used
+   }
+}
+That's why its important to know how to distinguish difference between local and global (member) instances and variables.

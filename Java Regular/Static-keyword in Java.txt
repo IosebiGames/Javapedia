@@ -1,0 +1,64 @@
+usually in Java we have a keyword of 'static' this means that specific method, class, object instance, variable can be accessed
+from anywhere or from another class without needing to create instance of where it is created.
+But it is important to understand how usage of 'static' keyword works:
+
+Rules:
+- Non-Static Objects/variables/Methods can't be used in static-context.
+- Static Objects/variables/Methods can be used in non-static context.
+- You don't have to create new instance of class where static Object/variable/method is declared in order to access it.
+Example:
+public class Main {
+        public static int x;
+     public static void main(String[] args) {
+            x = 5;
+    }
+}
+So since 'x' is static, it can indeed be used static-context. But otherwise if 'x' was not static:
+public class Main {
+     public int x; 
+     public static void main(String[] args){
+           x = 5; //it won't work.
+    }
+}
+it won't work because you are trying to use non-static 'x' in static-context. 
+But interestingly static Object/method/variable can be used in non-static context as we said:
+
+public class Main {
+     public static int x = 5;  
+     public static void main(String[] args) { 
+     }
+     public void print() {
+         System.out.println(x);
+    }
+}
+However, 'print' method can't be called in main method because its non-static. 
+So you can make it static:
+public class Main {
+     public static int x = 5;  
+     public static void main(String[] args) { 
+             print(); // it works now
+     }
+     public static void print() {
+         System.out.println(x);
+    }
+}
+so this time you can call 'print' method without anything.
+and the final part is to use static Object/variable/method from another class:
+
+public class Main {
+     public static int x = 5;
+     public static int y = 2;
+     
+     public static void printHello() {
+          System.out.println("Hello"); 
+    }
+}
+public class Main2 {
+     public static void main(String[] args) {
+            int x = Main.x;
+            int y = Main.y;
+            Main.printHello();
+            System.out.println(x);
+            System.out.println(y);
+   }
+}

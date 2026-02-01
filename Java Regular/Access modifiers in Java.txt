@@ -1,0 +1,43 @@
+in Java, we can declare variables, objects, methods, fields without needing to apply any access modifier to it. usually 
+variable/Object/field/method can work if declared correctly in class itself where it is created...But if you want to access it from 
+another class, it would get problematic because it has no access modifiers.
+ that's why we regularly use access modifiers, such as: public, private, protected and etc. 
+However, most useful ones are public/private.
+
+Lets say you have this class with variable:
+public class Main {
+      int x = 5;    
+} 
+public class Main2 {
+    public static void main(String[] args) {
+           Main m = new Main();
+      
+            System.out.println(m.x); //fail
+    } 
+}
+Obviously, you can't use 'x' because it is not visible from 'Main' class, that's why it should be public:
+
+public class Main {
+   public int x = 5;
+}
+public class Main2 {
+public static void main(String[] args) {
+           Main m = new Main();
+      
+            System.out.println(m.x); //working
+    }     
+}
+Now you can use 'x' anywhere because it is visible. However, you can also make it 'private', so 'x' variable will be hidden.
+those access modifiers and keywords can apply to any fields, objects, variables:
+
+public class Main {
+     public int x = 5;
+     private int  y = 2;
+     private MyObject mo = new MyObject(); //class
+     public boolean mB = true; 
+
+    public void myMethod() {
+    }
+    private void myMethod2() {
+    }
+}

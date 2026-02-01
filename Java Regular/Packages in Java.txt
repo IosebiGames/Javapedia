@@ -1,0 +1,29 @@
+Packages in Java can help you to seperate classes and files from each other, instead of dragging and dropping resources in just
+one package or instead of creating all classes in one package, you can create multiple ones and seperate them.
+Packages are very similar to folders in your project structure (But in Eclipse folders and packages act really similarly when
+they are created in project structure).
+
+But most important part here is:
+Class that is inside of specific package needs to have package declaration on top, usually with 'package' keyword.
+'package' keyword is declared at very top and mainly specifies that Class is under specific package.
+Usually when you create new Class under some package, IDE automatically generates that package declaration.
+However, sometimes you have to add it manually.
+
+Example of how it looks:
+
+package myPackage;
+public class Main {
+    public static void main(String[] args) {
+     }
+}
+Or if you want to use other classes from another packages, you need to add import declarations in order to use those classes:
+
+import myPackage.MyObject;
+public class Main {
+     MyObject mo;
+     public void create(){
+        mo = new MyObject();
+    }
+}
+and that is something that you have to do manually.
+Interesting fact: In eclipse, you can automatically import by combination of 'Ctrl' + 'Shift' + 'O' Keys.
