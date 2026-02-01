@@ -1,0 +1,18 @@
+we all know that in Java, main method looks like this:
+public static void main(String[] args) {
+}
+but many of you ask, why public static void main and not anything else. why does it even matter?
+Well you see, when you execute your Java code, Hotspot JVM loads native libraries trough the LoadLibrary and
+JVM (Java Virtual Machine), JIT (Just in Time) Compiler and Hotspot start working on it to execute your Java code.
+
+but before running your Java code, it must use main method for command line arguments (optional), or use
+main method for important processes. so Correctly declared main method matters.
+
+public - as you understand, means that main method can be accessed in other classes.
+static - means that main method can be used by JVM without needing to create new instance of class where PSVM is being declared.
+void - means, it specifies that it is just a default method.
+main - name for Main method.
+(String[] args) - 'args' array has contents of Program Arguments and VM argumets.
+
+its important to declare main method correctly as it is originally, you can say static public void main but still, PSVM is more 
+recognizable.
