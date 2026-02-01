@@ -3,4 +3,16 @@ classes are group of code that you write, usually they end with .java files. (ex
 classes have their declaration syntax too:
 public class Main { //opening
       //rest of the code goes here 
+
 }//closing
+
+Also importantly when we want to use one class in another, we need to create a new instance of that class:
+public class Main {
+    int x = 5;
+}
+public class Main2 {
+   public static void main(String[] args) {
+        Main m = new Main(); 
+    }
+}
+'m' now is a instance name, you can use 'Main' class inside of Main2 class.
