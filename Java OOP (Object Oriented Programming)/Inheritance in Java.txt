@@ -1,0 +1,41 @@
+Inheritance in Java is when you extend any other class. think of it as 𝐜𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐨𝐧 between two classes.
+if one class extends another, methods and variables from there can be inherited. 
+
+Inheriatnce looks like this:
+public class Main2 {
+        public static int x;
+        public static int y;
+	
+       public static int calculate(int x, int y) {
+                  return x + y;		
+        }
+}
+public class Main extends Main2 {
+    public static void main(String[] args) { 
+                 x = 1;
+                 y = 3;
+                 System.out.println(calculate(x, y));
+   }
+}
+𝐇𝐨𝐰𝐞𝐯𝐞𝐫, if super class has a constructor with parameters, you might need to use super keyword with constructor:
+
+public class Main2 {
+         private int x;
+         private int y;
+	
+        public Main2(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+        public int calculate() {
+             return x + y;		
+        }
+}
+public class Main extends Main2 {
+    public Main(int x, int y) {
+                super(x, y);
+    }
+    public static void main(String[] args) {
+            new Main(5, 10);
+    }
+}

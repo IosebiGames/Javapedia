@@ -1,0 +1,37 @@
+Overloading method in Java is one of the principles of OOP, it is when you pass 𝐩𝐚𝐫𝐚𝐦𝐞𝐭𝐞𝐫𝐬 in method to use them, but later
+when you call that method, you have to insert 𝐚𝐫𝐠𝐮𝐦𝐞𝐧𝐭𝐬.
+
+It is like a promise, You can use something for a method knowing that you will return it later. 
+Its like telling Java: "Give me hypothethical working String but later I would give you real one so you can do what I tried"
+you can overload as much methods as you want.
+
+overloaded method looks like this:
+public void myMethod(int x, int y, MyClass mc, boolean b) {
+       System.out.println(x);
+       System.out.println(y);
+       System.out.println(mc.class.getName());
+       System.out.println(b);
+}
+everytime you pass parameters, you have to specify 𝐝𝐚𝐭𝐚𝐭𝐲𝐩𝐞 before a name or name of the 𝐜𝐥𝐚𝐬𝐬 that you created instance of.
+
+But when you call that method, as we said you have to pass arguments:
+public class Main {
+   public static void main(String[] args) {
+        myMethod(5, 4, mc, true);  
+
+        int x = 5;
+        int y = 4;
+        MyClass mc = new MyClass();
+        boolean b = false;
+        myMethod(x, y, mc, b);
+   }
+   public  static void myMethod(int x, int y, MyClass mc, boolean b) {
+        System.out.println(x);
+        System.out.println(y);
+        System.out.println(mc.class.getName());
+        System.out.println(b);
+   }
+}
+Method overloading is very important and useful part of Java.
+
+𝐢𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭: two methods can have a totally same name but still differ because their parameters are different from each other.

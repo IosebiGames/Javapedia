@@ -1,0 +1,48 @@
+Encapsulation in Java is a popular OOP principle, it is when you want to get value of variable or class despite of it being
+declared as 𝐩𝐫𝐢𝐯𝐚𝐭𝐞. It is one of the principles that some people hate because they think that too much encapsulation makes
+code messy and "verbose".
+
+Encapsulation looks like this:
+       public class Main2 {
+	private int x;
+	private int y;
+	private boolean b;
+	private Main m;
+	public Main2(int x, int y, boolean b, Main m) {
+	        this.x = x;
+	        this.y = y;
+	        this.b = b;
+                            this.m = m;
+	}
+	public int getX() {
+	      return x;
+	}
+	public int getY() {
+	      return y;
+	}
+	public boolean getB() {
+	      return b;
+	}  
+                    public int setX(int x) {
+                          this.x = x;
+                    }
+                    public int setY(int y) {
+                          this.y = y;
+                    }
+                   public boolean setB(boolean b) {
+                          this.b = b;
+                    }      
+     }
+    public class Main {
+          public static void main(String[] args) {
+	  Main2 m2 = new Main2(5, 4, false);
+	
+	  System.out.println("x: " + m2.getX());
+	  System.out.println("y: " + m2.getY());
+	  System.out.println("b: " + m2.getB());
+          }
+}
+You can't use 'x' or 'y' or 'b' variable by itself, but you can get it by calling method in another class. But what sets
+value for those variables are 𝐚𝐫𝐠𝐮𝐦𝐞𝐧𝐭𝐬 from Main2 class constructor. but as you see in Main method, we create new instance of
+'Main2' class and then pass arguments in it. and then we can use that instance to get different values using encapsulated methods.
+By encapsulation, you can set or get values. and methods that get value are 𝐠𝐞𝐭𝐭𝐞𝐫𝐬 but methods that set value are 𝐬𝐞𝐭𝐭𝐞𝐫𝐬.

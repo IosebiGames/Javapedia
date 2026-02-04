@@ -1,0 +1,23 @@
+Overloaded constructors again, are similar to overloaded methods even if constructors are not a methods in classic sense.
+you can declare multiple constructors with the same class names yet they can still be different from each other because of
+different parameters.
+
+example of Overloaded constructors:
+   public class Main {
+            public Main() {
+	  System.out.println("Hello");
+            }
+            public Main(int x, int y, boolean b) {
+	  if(b == true) {
+	       System.out.println(x + y);
+	   }
+            }
+           public Main(Main2 mc, int z, boolean b2) {
+		
+           }
+           public static void main(String[] args) {
+                 new Main();
+                 new Main(4, 5, true);	
+           //      new Main(new Main2(0, 0, true), 4, false);	
+          }
+}

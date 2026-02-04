@@ -1,0 +1,18 @@
+Method Overriding in Java is when you declare method somewhere in class that is 𝐞𝐦𝐩𝐭𝐲. However, you use and fill it from
+𝐚𝐧𝐨𝐭𝐡𝐞𝐫 class. Its like leaving empty box inside of one house but filling and preparing it from another class.
+in order to Override method, you have to declare a method first in any class, and then inherit class in where method is declared, and
+then override it.
+
+it looks like this:
+public class Main2 {
+     public void calculate(int x, int y);
+}
+public class Main extends Main2 {
+    public static void main(String[] args) {
+    }
+    @Override
+    public void calculate(int x, int y) {
+    }
+}
+
+Think of it as a "something declared in another class is not finished and will be used and filled from another class"
