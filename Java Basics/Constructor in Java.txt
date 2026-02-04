@@ -1,0 +1,17 @@
+Constructor in Java is very 𝐬𝐢𝐦𝐢𝐥𝐚𝐫 to method even if it is not a method in classic sense. it is kind of block that has only 
+visibility modifiers and class name and body. but not a return types. constructor gets 𝐜𝐚𝐥𝐥𝐞𝐝 when you create new instance
+of the class where constructor is being declared. Constructor gets called whether its created or not. 
+
+example of Constructor:
+public class Main2 {
+    // you can make constructor public, private, protected or 𝐫𝐞𝐦𝐨𝐯𝐞 visibility modifer from constructor at all.
+     public Main2() {
+      System.out.println("Hello");     
+    }
+}
+public class Main {
+      public static void main(String[] args) {
+              Main2 m2 = new Main2(); // will print 'Hello' because constructor is called.
+     }
+}
+
