@@ -1,0 +1,15 @@
+short instance creating in Java is when you create new instance of class/Object 𝐚𝐭 𝐨𝐧𝐜𝐞 while calling constructor 
+of the class at the same time. it can be often done if you want to create new instance of the class without needing to
+use it later. it can be pretty short and effective depending on goal.
+
+example:
+public class Main2 {
+     public Main2() {
+         System.out.println("Hello");     
+    }
+}
+public class Main {
+      public static void main(String[] args) {
+              new Main2(); // will print 'Hello' because constructor is called and new instance of the class is created at once.
+     }
+}
